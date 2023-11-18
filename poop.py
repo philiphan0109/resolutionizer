@@ -10,4 +10,4 @@ for sub_folder in next(os.walk(data_path))[1]:
     files = glob.glob(os.path.join(path, ""))[:10]
     
     for file in files:
-        shutil.move(file, "~/data") 
+        shutil.move(file, "~/data")
