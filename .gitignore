@@ -2,3 +2,4 @@ __pycache__
 .DS_STORE/
 data_final.zip
 data_final/
+trained_models

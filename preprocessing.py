@@ -1,7 +1,13 @@
 import os
 import glob
-from PIL import Image
+import torch
+import torchvision
+from PIL import Image, ImageGrab, ImageTk, ImageDraw
+import matplotlib.pyplot as plt
+import numpy as np
 
+
+# Creating lowres images
 image_path = "data_final/highres/"
 output_path = "data_final/lowres/"
 
