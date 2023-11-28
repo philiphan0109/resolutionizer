@@ -1,9 +1,27 @@
 import os
 import glob
+import shutil
 from PIL import Image
+import torch, torchvision
 
-image_path = "data_final/highres/"
-output_path = "data_final/lowres/"
+data_path = "data_final/"
+
+# Splitting the dataset
+
+augmented_datasets = torchvision.datasets.ImageFolder(root = augmented_data_path, transform = transform)
+train_dataset, valid_dataset = torch.utils.data.random_split(augmented_datasets, [train_size, valid_size])
+
+def move_files(file_list, source_directory, destination_directory):
+    for filename in file_list:
+        source_path = os.path.join(source_directory, filename)
+        destination_path = os.path.join(destination_directory, filename)
+        shutil.move(source_path, destination_path)
+
+
+
+
+highres_path = "data_final/highres/"
+lowres_path = "data_final/lowres/"
 
 def downscale(image_path, output_path, scale):
     with Image.open(image_path) as img:
