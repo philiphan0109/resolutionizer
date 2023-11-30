@@ -17,9 +17,7 @@ def downscale(image_path, output_path, scale):
         result_img = small.resize(img.size)
         result_img.save(output_path)
 
-
-
 pattern = os.path.join(image_path, '*')
 image_files = glob.glob(pattern)
 for image_file in image_files:
-    downscale(image_file, os.path.join(output_path, os.path.basename(image_file)), scale=5)
+    downscale(image_file, os.path.join(output_path, os.path.basename(image_file)), scale=15)
